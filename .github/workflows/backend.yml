@@ -1,4 +1,4 @@
-name: Pipeline
+name: Pipeline Backend
 on:
   push:
     branches: [ "developer" ]
@@ -16,5 +16,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install
-      - run: npm test
+      - name: Install frontend dependencies
+        run: npm install
+        working-directory: ./backend
+
+      - name: Run frontend tests
+        run: npm test
+        working-directory: ./backend
