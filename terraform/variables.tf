@@ -9,3 +9,21 @@ variable "vpc_cidr" {
   type        = string
   default     = false
 }
+
+variable "ami" {
+  default = false 
+  type = string
+  description = "ami for instance"
+}
+
+variable "instance_type" {
+  default = false
+  type = string
+  description = "type instance"
+}
+
+variable "key_name" {
+  default = false
+  type = string
+  description = "key_name"
+}
