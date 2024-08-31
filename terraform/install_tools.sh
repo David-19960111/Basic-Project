@@ -16,8 +16,8 @@ aws --version
 
 # Instalar Docker
 echo "Instalando Docker..."
-sudo apt-get install -y docker.io
-sudo usermod -aG docker $USER 
+sudo apt install docker.io -y
+sudo usermod -aG docker $USER # Reemplazar con tu nombre de usuario, por ejemplo, 'ubuntu'
 newgrp docker
 sudo chmod 777 /var/run/docker.sock
 which docker
@@ -26,9 +26,10 @@ which docker
 docker --version
 
 # Instalar kubectl
+echo "Instalando kubectl..."
 sudo apt update
 sudo apt install curl -y
-curl -LO https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 which kubectl
 
@@ -44,8 +45,8 @@ sudo mv /tmp/eksctl /usr/local/bin
 # Verificar la versión de eksctl
 eksctl version
 
-echo "Todas las herramientas se han instalado correctamente."
+# Instalar Git
+echo "Instalando Git..."
+sudo apt-get install git -y
 
-# Reiniciar la instancia para aplicar cambios de grupo
-echo "Reiniciando la instancia para aplicar los cambios de grupo..."
-sudo reboot
+echo "Todas las herramientas se han instalado correctamente y el repositorio se ha clonado."
