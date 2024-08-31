@@ -50,9 +50,12 @@ resource "aws_instance" "my_instance" {
   associate_public_ip_address = var.associate_public_ip_address
   key_name             = var.key_name
   security_groups      = [aws_security_group.my_sg.id]
-  user_data = file("/mnt/c/Users/User/OneDrive/Escritorio/Proyectos/Proyectos Basicos/K8s/install_tools.sh")
+  user_data = templatefile("./install_tools.sh", {})
   tags = {
     Name = "my-instance"
+  }
+  root_block_device {
+    volume_size = var.storage_size
   }
 }
 
