@@ -1,3 +1,4 @@
+
 region        = "us-east-2"
 vpc_cidr      = "10.0.0.0/16"
 ami           = "ami-085f9c64a9b75eed5"

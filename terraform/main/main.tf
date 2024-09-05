@@ -3,7 +3,7 @@ resource "aws_vpc" "my_vpc" {
   enable_dns_hostnames = true
   enable_dns_support = true
   tags = {
-    Name = "vpc-k8s"
+    Name = "vpc-project"
   }
 }
 
