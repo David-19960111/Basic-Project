@@ -1,14 +1,19 @@
-variable "eks_vpc_id" {
-  description = "VPC ID for EKS"
-  type        = string
+variable "tag-eks-cluster-role" {
+  type = string
+  default = null
 }
 
-variable "eks_subnet_ids" {
-  description = "IDs de las subredes para EKS"
-  type        = list(string)
+variable "tag-eks-cluster" {
+  type = string
+  default = null 
 }
 
-variable "eks_control_plane_subnet_ids" {
-  description = "IDs de las subredes del control plane para EKS"
-  type        = list(string)
+variable "tag-eks-node-role" {
+  type = string
+  default = null 
+}
+
+variable "tag-eks-node-group" {
+  type = string
+  default = null 
 }

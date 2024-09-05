@@ -12,7 +12,7 @@ resource "aws_iam_role" "eks_cluster_role" {
   })
 
   tags = {
-    Name = "eks-cluster-role"
+    Name = var.tag-eks-cluster-role
   }
 }
 
@@ -32,7 +32,7 @@ resource "aws_eks_cluster" "eks_cluster" {
   }
 
   tags = {
-    Name = "k8s-cluster"
+    Name = var.tag-eks-cluster
   }
 }
 
@@ -49,7 +49,7 @@ resource "aws_iam_role" "eks_node_role" {
   })
 
   tags = {
-    Name = "eks-node-role"
+    Name = var.tag-eks-node-role
   }
 }
 
@@ -67,6 +67,6 @@ resource "aws_eks_node_group" "eks_node_group" {
   }
 
   tags = {
-    Name = "eks-node-group"
+    Name = var.tag-eks-node-group
   }
 }
