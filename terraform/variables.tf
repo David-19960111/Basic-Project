@@ -59,6 +59,18 @@ variable "public_sub_cidr_block" {
 }
 
 
+variable "public_subnet_id" {
+  description = "ID of the public subnet"
+  type        = string
+}
+
+variable "private_subnet_id" {
+  description = "ID of the private subnet"
+  type        = string
+}
+
+
+
 variable "mutability" {
   type        = bool
   description = "Enables/disables mutability (ability to change image tag)"
@@ -73,34 +85,4 @@ variable "ecr_repo_name_one" {
 variable "ecr_repo_name_two" {
   type    = string
   default = false
-}
-
-variable "tag-eks-cluster-role" {
-  type    = string
-  default = null
-}
-
-variable "tag-eks-cluster" {
-  type    = string
-  default = null
-}
-
-variable "tag-eks-node-role" {
-  type    = string
-  default = null
-}
-
-variable "tag-eks-node-group" {
-  type    = string
-  default = null
-}
-
-variable "public_subnet_id" {
-  description = "ID of the public subnet"
-  type        = string
-}
-
-variable "private_subnet_id" {
-  description = "ID of the private subnet"
-  type        = string
 }

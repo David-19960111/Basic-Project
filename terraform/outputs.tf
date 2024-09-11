@@ -45,7 +45,3 @@ output "ecr_repo_url_one" {
 output "ecr_repo_url_two" {
   value = module.ecr.ecr_repo_url_two
 }
-
-output "cluster_endpoint" {
-  value = module.eks.cluster_endpoint
-}
