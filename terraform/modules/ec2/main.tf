@@ -50,7 +50,7 @@ resource "aws_instance" "my_instance" {
   associate_public_ip_address = var.associate_public_ip_address
   key_name             = var.key_name
   security_groups      = [aws_security_group.my_sg.id]
-  user_data = templatefile("./install_tools.sh", {})
+  user_data = templatefile("${path.module}/install_tools.sh", {})
   tags = {
     Name = "my-instance"
   }
